@@ -113,7 +113,7 @@ $notesRow=$result->fetch_assoc();
     </head>
 	<body>
 		<div class="Center">
-            <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+            	<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                 <div class="form-group <?php echo (!empty($title_err)) ? 'has-error' : ''; ?>">
                     <label>Title:<sup>*</sup></label>
                     <input type="text" name="title" style="width: 500px;" class="form-control" value="<?php echo $title; ?>">
@@ -124,17 +124,17 @@ $notesRow=$result->fetch_assoc();
                     <input type="text" name="note" style="width: 500px;" class="form-control" value="<?php echo $note; ?>">
                     <span class="help-block"><?php echo $note_err; ?><?php $notesRow["title"]?></span>
                 </div>
-				<div id="container">
-					<div class="form-group">
-						<input type="submit" class="btn btn-primary" value="Submit" onclick='document.getElementById("title").value=""; document.getElementById("note").value="";'>
-						<input type="submit" class="btn btn-primary" value="Delete" onclick='document.getElementById("title").value=""; document.getElementById("note").value=""; deleteEntry();'>
-					</div>
-				</div>
-            </form>
-        </div>
+		<div id="container">
+			<div class="form-group">
+				<input type="submit" class="btn btn-primary" value="Submit" onclick='document.getElementById("title").value=""; document.getElementById("note").value="";'>
+				<input type="submit" class="btn btn-primary" value="Delete" onclick='document.getElementById("title").value=""; document.getElementById("note").value=""; deleteEntry();'>
+			</div>
+		</div>
+            	</form>
+        	</div>
 		<?php
 			#more php. I put this section down here after the buttons. This section will handle the submit button. This one is more in line with the submit button on other pages.
-			if ($_SERVER["REQUEST_METHOD"] == "POST") {
+			/*if ($_SERVER["REQUEST_METHOD"] == "POST") {
 				echo "inside first if.";
 				# Check if title is empty
 				if (empty(trim($_POST['title']))) {
@@ -173,7 +173,7 @@ $notesRow=$result->fetch_assoc();
 						}
 					}
 				}
-			}
+			}*/
 		?>
 	</body>
 </html>
